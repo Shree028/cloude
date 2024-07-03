@@ -1,0 +1,19 @@
+Create Dockerfiles:Create a directory for your Dockerfiles, then create three different Dockerfiles.mkdir httpd-docker
+cd httpd-dockerCreate Dockerfile1:# Dockerfile1
+FROM httpd:latest
+COPY ./index1.html /usr/local/apache2/htdocs/index.htmlCreate Dockerfile2:# Dockerfile2
+FROM httpd:latest
+COPY ./index2.html /usr/local/apache2/htdocs/index.htmlCreate Dockerfile3:# Dockerfile3
+FROM httpd:latest
+COPY ./index3.html /usr/local/apache2/htdocs/index.html
+
+Create HTML Files:Create three HTML files to be copied into the Docker images.<!-- index1.html -->
+<html><body><h1>Hello from Container 1</h1></body></html><!-- index2.html -->
+<html><body><h1>Hello from Container 2</h1></body></html><!-- index3.html -->
+<html><body><h1>Hello from Container 3</h1></body></html>
+
+Build Docker Images:Use the following commands to build the Docker images.docker build -t my-httpd1 -f Dockerfile1 .
+docker build -t my-httpd2 -f Dockerfile2 .
+docker build -t my-httpd3 -f Dockerfile3 .
+
+docker ps
