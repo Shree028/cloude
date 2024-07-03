@@ -1,0 +1,6 @@
+Q4. Stop and start the container
+docker ps -a
+docker start <container_id_or_name>
+docker stop <container_id_or_name>
+
+docker ps (check or show)
